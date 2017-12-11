@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="smartreminder.ErrorLoginController">
+   <children>
+      <Pane layoutY="7.0" prefHeight="560.0" prefWidth="560.0">
+         <children>
+            <Rectangle arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="481.0" layoutX="15.0" layoutY="40.0" opacity="0.8" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="3.0" width="526.0" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="205.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/incorrect.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="122.0" layoutY="50.0" prefHeight="104.0" prefWidth="304.0" text=" Login Failed" textFill="#514c4c">
+               <font>
+                  <Font name="Tw Cen MT" size="55.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="82.0" layoutY="307.0" prefHeight="93.0" prefWidth="406.0" text="Incorrect username or password !!" textAlignment="CENTER" textFill="#c32525">
+               <font>
+                  <Font name="Tw Cen MT" size="28.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="210.0" layoutY="429.0" onAction="#btnBack" prefHeight="52.0" prefWidth="150.0" style="-fx-background-color: #8c8c90;" text="Back" textFill="WHITE">
+               <font>
+                  <Font name="Tw Cen MT Bold" size="19.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#cdc5c5" height="2.0" layoutX="91.0" layoutY="148.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="382.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9e9c9c" height="2.0" layoutX="99.0" layoutY="388.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="382.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="smartreminder.SignUpController">
+   <children>
+      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#ff000000" height="509.0" layoutX="30.0" layoutY="26.0" opacity="0.9" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="506.0" />
+      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="535.0" layoutX="15.0" layoutY="13.0" opacity="0.9" stroke="#fcf9f9" strokeType="INSIDE" strokeWidth="0.0" width="536.0" />
+      <Circle fx:id="circle8" fill="#1f93ff37" layoutX="426.0" layoutY="502.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Label layoutX="221.0" layoutY="50.0" prefHeight="94.0" prefWidth="181.0" text="Sign Up" textFill="#4a4a4a">
+         <font>
+            <Font name="Tw Cen MT Bold" size="37.0" />
+         </font>
+      </Label>
+      <Circle fx:id="circle5" fill="#1f93ff37" layoutX="98.0" layoutY="42.0" radius="26.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="DODGERBLUE" layoutX="145.0" layoutY="57.0" radius="4.0" stroke="#fffbfb" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="58.0" layoutY="84.0" radius="4.0" stroke="#fffbfb" strokeType="INSIDE" />
+      <Circle fill="#ff1f1f" layoutX="501.0" layoutY="29.0" radius="4.0" stroke="#fffbfb" strokeType="INSIDE" />
+      <Circle fill="#1fff22" layoutX="402.0" layoutY="130.0" radius="4.0" stroke="#fffbfb" strokeType="INSIDE" />
+      <Circle fill="#ffc01f" layoutX="428.0" layoutY="61.0" radius="4.0" stroke="#fffbfb" strokeType="INSIDE" />
+      <Pane layoutX="12.0" layoutY="153.0" prefHeight="288.0" prefWidth="560.0">
+         <children>
+            <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#d0e1f2" height="288.0" layoutX="13.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" visible="false" width="521.0" />
+            <TextField fx:id="username_fill" layoutX="234.0" layoutY="22.0" prefHeight="52.0" prefWidth="269.0" promptText="Username" style="-fx-background-radius: 5;" />
+            <PasswordField fx:id="password_fill" layoutX="234.0" layoutY="89.0" prefHeight="52.0" prefWidth="269.0" promptText="Password" style="-fx-background-radius: 5;" />
+            <PasswordField fx:id="password_confirm" layoutX="234.0" layoutY="156.0" prefHeight="52.0" prefWidth="269.0" promptText="Comfirm Password" style="-fx-background-radius: 5;" />
+            <TextField fx:id="tel_fill" layoutX="234.0" layoutY="222.0" prefHeight="52.0" prefWidth="269.0" promptText="Tel." style="-fx-background-radius: 5;" />
+            <Label layoutX="37.0" layoutY="33.0" prefHeight="31.0" prefWidth="181.0" text="Username " textFill="#615f5f">
+               <font>
+                  <Font name="SansSerif Regular" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="38.0" layoutY="100.0" prefHeight="31.0" prefWidth="168.0" text="Password " textFill="#615f5f">
+               <font>
+                  <Font name="SansSerif Regular" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="169.0" prefHeight="31.0" prefWidth="200.0" text="Comfirm Password " textFill="#615f5f">
+               <font>
+                  <Font name="SansSerif Regular" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="38.0" layoutY="234.0" prefHeight="31.0" prefWidth="181.0" text="Tel." textFill="#615f5f">
+               <font>
+                  <Font name="SansSerif Regular" size="21.0" />
+               </font>
+            </Label>
+            <Circle fill="#ff212138" layoutX="103.0" layoutY="352.0" radius="26.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle fx:id="circle10" fill="#ff212138" layoutX="149.0" layoutY="340.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle fill="#1fff22" layoutX="487.0" layoutY="329.0" radius="4.0" stroke="#fffbfb" strokeType="INSIDE" />
+            <Circle fill="#ff1f1f" layoutX="403.0" layoutY="325.0" radius="4.0" stroke="#fffbfb" strokeType="INSIDE" />
+            <Circle fill="DODGERBLUE" layoutX="71.0" layoutY="271.0" radius="4.0" stroke="#fffbfb" strokeType="INSIDE" />
+            <Circle fill="#ffc01f" layoutX="125.0" layoutY="324.0" radius="4.0" stroke="#fffbfb" strokeType="INSIDE" />
+            <Circle fx:id="circle3" fill="#07e51d74" layoutX="67.0" layoutY="340.0" radius="36.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle fill="#f8ff21ab" layoutX="157.0" layoutY="320.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5b5b5b" height="2.0" layoutX="77.0" layoutY="286.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="382.0" />
+            <JFXButton layoutX="45.0" layoutY="309.0" onAction="#onBackClick" prefHeight="42.0" prefWidth="94.0" style="-fx-background-color: #8c8c90;" text="Back" textFill="WHITE">
+               <font>
+                  <Font name="Tw Cen MT Bold" size="19.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Circle fx:id="circle11" fill="#f621ff38" layoutX="80.0" layoutY="109.0" radius="36.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="circle2" fill="#40ff2138" layoutX="139.0" layoutY="84.0" radius="47.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#fbff2180" layoutX="196.0" layoutY="54.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="circle1" fill="#5b325438" layoutX="462.0" layoutY="62.0" radius="47.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#dfff2138" layoutX="406.0" layoutY="73.0" radius="26.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#ffe12138" layoutX="227.0" layoutY="114.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#ff212138" layoutX="480.0" layoutY="101.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="DODGERBLUE" layoutX="468.0" layoutY="93.0" radius="4.0" stroke="#fffbfb" strokeType="INSIDE" />
+      <Circle fill="#ff212138" layoutX="341.0" layoutY="53.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="circle12" fill="#4e21ff38" layoutX="364.0" layoutY="84.0" radius="26.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#ff212138" layoutX="181.0" layoutY="116.0" radius="26.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="circle5" fill="#21ff9c38" layoutX="388.0" layoutY="114.0" radius="26.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#a9effc38" layoutX="472.0" layoutY="109.0" radius="36.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#ff1fba" layoutX="139.0" layoutY="127.0" radius="4.0" stroke="#fffbfb" strokeType="INSIDE" />
+      <Pane fx:id="error_pane" layoutX="311.0" layoutY="16.0" prefHeight="42.0" prefWidth="230.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fffafd" height="42.0" layoutX="14.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="200.0" />
+            <Label layoutX="61.0" layoutY="12.0" prefHeight="17.0" prefWidth="108.0" text="ERROR PASSWORD" textFill="#d70a0a" />
+         </children>
+      </Pane>
+      <Circle fill="#d021ff38" layoutX="61.0" layoutY="468.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="circle9" fill="#5b325438" layoutX="436.0" layoutY="468.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="circle6" fill="#21d5ff38" layoutX="126.0" layoutY="457.0" radius="26.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="circle7" fill="#e5ff217c" layoutX="454.0" layoutY="504.0" radius="26.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="circle4" fill="#1f93ff37" layoutX="509.0" layoutY="455.0" radius="36.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="DODGERBLUE" layoutX="149.0" layoutY="516.0" radius="4.0" stroke="#fffbfb" strokeType="INSIDE" />
+      <Circle fill="#ff1f1f" layoutX="538.0" layoutY="480.0" radius="4.0" stroke="#fffbfb" strokeType="INSIDE" />
+      <Circle fill="#ffc01f" layoutX="44.0" layoutY="505.0" radius="4.0" stroke="#fffbfb" strokeType="INSIDE" />
+      <Circle fill="#ff21f038" layoutX="501.0" layoutY="501.0" radius="26.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#59ff21" layoutX="484.0" layoutY="520.0" radius="4.0" stroke="#fffbfb" strokeType="INSIDE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5b5b5b" height="2.0" layoutX="94.0" layoutY="148.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="382.0" />
+      <JFXButton layoutX="423.0" layoutY="461.0" onAction="#onSignUpClick" prefHeight="42.0" prefWidth="94.0" style="-fx-background-color: #8c8c90;" text="Sign Up" textFill="WHITE">
+         <font>
+            <Font name="Tw Cen MT Bold" size="19.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

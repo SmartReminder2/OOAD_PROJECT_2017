@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="smartreminder.AddingScheduleController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#606161" height="82.0" stroke="#f5f5f5" strokeType="INSIDE" strokeWidth="0.0" width="1209.0" />
+      <Text fx:id="labelHead" fill="WHITE" layoutX="509.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADD SCHEDULE">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#444445" height="683.0" layoutY="82.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1209.0" />
+      <TextField fx:id="detail" layoutX="340.0" layoutY="224.0" prefHeight="89.0" prefWidth="545.0" promptText="DETAILS">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="scheduleName" layoutX="340.0" layoutY="143.0" onAction="#Clicking" prefHeight="49.0" prefWidth="545.0" promptText="SCHEDULE NAME">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <ComboBox fx:id="preAlarmList" layoutX="457.0" layoutY="527.0" onAction="#preAlarming" prefHeight="25.0" prefWidth="137.0" style="-fx-background-color: #ffffff;" />
+      <CheckBox fx:id="checkRepeat" layoutX="647.0" layoutY="515.0" mnemonicParsing="false" onAction="#checkBoxOnClick" prefHeight="49.0" prefWidth="100.0" text="Repeat" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="checkAlarm" layoutX="789.0" layoutY="515.0" mnemonicParsing="false" onAction="#checkBoxOnClick" prefHeight="49.0" prefWidth="100.0" text="Alarm" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </CheckBox>
+      <ListView fx:id="startTime" layoutX="340.0" layoutY="366.0" onMouseClicked="#SelectStartTime" prefHeight="89.0" prefWidth="200.0" />
+      <ListView fx:id="finishTime" layoutX="686.0" layoutY="366.0" onMouseClicked="#SelectFinishTime" prefHeight="89.0" prefWidth="200.0" />
+      <Label layoutX="387.0" layoutY="333.0" prefHeight="27.0" prefWidth="107.0" text="START TIME" textFill="#1beb94">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="732.0" layoutY="333.0" prefHeight="27.0" prefWidth="107.0" text="FINISH TIME" textFill="#1beb94">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="347.0" layoutY="526.0" text="Pre-Alarm" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="650.0" layoutY="623.0" onAction="#Clicking" prefHeight="39.0" prefWidth="121.0" style="-fx-background-color: #9dbee4;" text="Save">
+         <font>
+            <Font name="Tw Cen MT" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="452.0" layoutY="623.0" onAction="#backOnclick" prefHeight="39.0" prefWidth="121.0" style="-fx-background-color: #9dbee4;" text="Back">
+         <font>
+            <Font name="Tw Cen MT" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="smartreminder.AddScheduleController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#444445" height="774.0" stroke="#f5f8f8" strokeType="INSIDE" strokeWidth="0.0" width="1214.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#606161" height="77.0" stroke="#f5f8f8" strokeType="INSIDE" strokeWidth="0.0" width="1214.0" />
+      <Text fx:id="headLabel" fill="#fffefe" layoutX="445.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DAILY SCHEDULE">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <ScrollPane layoutX="105.0" layoutY="115.0" prefHeight="580.0" prefWidth="1005.0">
+        <content>
+          <AnchorPane fx:id="timeTable_pane" minHeight="0.0" minWidth="0.0" prefHeight="3000.0" prefWidth="1000.0" />
+        </content>
+      </ScrollPane>
+      <JFXButton layoutX="51.0" layoutY="19.0" onAction="#backBtn" prefHeight="39.0" prefWidth="121.0" style="-fx-background-color: #9dbee4;" text="Back">
+         <font>
+            <Font name="Tw Cen MT" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="1039.0" layoutY="19.0" onAction="#adding" prefHeight="39.0" prefWidth="121.0" style="-fx-background-color: #9dbee4;" text="Add">
+         <font>
+            <Font name="Tw Cen MT" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

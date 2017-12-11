@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="smartreminder.ProfilePageController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#44444500" height="750.0" layoutX="1.0" layoutY="7.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="345.0" />
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="368.0" layoutX="42.0" layoutY="293.0" opacity="0.96" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" width="262.0" />
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#93c3eb" height="51.0" layoutX="26.0" layoutY="269.0" opacity="0.96" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" width="298.0" />
+      <Label alignment="CENTER" layoutX="25.0" layoutY="276.0" prefHeight="38.0" prefWidth="101.0" text="Contact">
+         <font>
+            <Font name="Tw Cen MT Bold" size="24.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="43.0" layoutY="329.0" prefHeight="312.0" prefWidth="262.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="79.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="199.0" minWidth="10.0" prefWidth="199.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fitHeight="51.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/tel.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView fitHeight="51.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../Image/twiter2.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView fitHeight="51.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../Image/email.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView fitHeight="51.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
+               <image>
+                  <Image url="@../Image/ig.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView fitHeight="51.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
+               <image>
+                  <Image url="@../Image/FB.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </ImageView>
+            <Label fx:id="twi_label" alignment="TOP_LEFT" prefHeight="28.0" prefWidth="187.0" text="\@imoutouCute" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Tw Cen MT" size="20.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="ig_label" alignment="TOP_LEFT" prefHeight="28.0" prefWidth="187.0" text="\@imoutouChan" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Tw Cen MT" size="20.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="email_label" alignment="TOP_LEFT" prefHeight="28.0" prefWidth="187.0" text="uma.imo@gmail.com" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Tw Cen MT" size="20.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="tal_label" alignment="TOP_LEFT" prefHeight="28.0" prefWidth="187.0" text="085-1234567" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Tw Cen MT" size="20.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label fx:id="facebook_label" alignment="TOP_LEFT" prefHeight="28.0" prefWidth="187.0" text="umaru.imotou" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Tw Cen MT" size="20.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+         </children>
+      </GridPane>
+      <Button defaultButton="true" layoutX="203.0" layoutY="673.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" text="Edit">
+         <effect>
+            <Blend opacity="0.6" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fx:id="imageView" fitHeight="179.0" fitWidth="187.0" layoutX="88.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../Image/umaru.jpg" />
+         </image>
+      </ImageView>
+      <Circle fx:id="imageProfile" fill="WHITE" layoutX="174.0" layoutY="122.0" radius="100.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="4.0" />
+      <Label fx:id="username_label" alignment="CENTER" layoutX="26.0" layoutY="224.0" prefHeight="38.0" prefWidth="298.0" text="Username" textFill="WHITE">
+         <font>
+            <Font name="Tw Cen MT Bold" size="30.0" />
+         </font></Label>
+   </children>
+</AnchorPane>
