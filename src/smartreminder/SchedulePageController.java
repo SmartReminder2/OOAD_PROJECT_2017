@@ -36,12 +36,12 @@ public class SchedulePageController implements Initializable {
         SmartReminder.tmpHeadLabel_add = headLabel ; 
     }    
     @FXML
-    private void adding(ActionEvent event) {
-        SmartReminder.tmpId = 0;
-        SmartReminder.pageController.next("ScheduleMakerPage");
+    private void back(ActionEvent event) {
+        SmartReminder.pageController.next("HomePage");
     }
     @FXML
-    private void backBtn(ActionEvent event) {
-        SmartReminder.pageController.next("HomePage");
+    private void add(ActionEvent event) {
+        SmartReminder.tmpId = 0;
+        SmartReminder.pageController.next("ScheduleMakerPage");
     }
 }

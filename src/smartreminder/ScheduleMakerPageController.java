@@ -45,7 +45,8 @@ public class ScheduleMakerPageController implements Initializable {
     @FXML
     private Text headLabel;
     
-    private boolean checkRepeatValue; 
+    private boolean checkRepeatValue;
+    private boolean checkAlarmValue;
     
     /**
      * Initializes the controller class.
@@ -66,7 +67,31 @@ public class ScheduleMakerPageController implements Initializable {
         SmartReminder.tmpPreAlarmList.setItems(SmartReminder.PREALARMS);
     }      
     @FXML
-    private void Clicking(ActionEvent event) {
+    private void selectPreAlarm(ActionEvent event) {
+        SmartReminder.selectedPreAlarm = preAlarmList.getValue();
+    }
+    @FXML
+    private void setRepeat(ActionEvent event) {
+        checkRepeatValue = checkRepeat.isSelected();
+    }
+    @FXML
+    private void setAlarm(ActionEvent event) {
+        checkAlarmValue = checkAlarm.isSelected();
+    }
+    @FXML
+    private void selectStartTime(MouseEvent event) {
+        if(event.getClickCount() == 1){
+            SmartReminder.selectedStartTime = startTime.getSelectionModel().getSelectedItem();
+        }    
+    }
+    @FXML
+    private void selectFinishTime(MouseEvent event) {
+        if(event.getClickCount() == 1){
+            SmartReminder.selectedFinishTime = finishTime.getSelectionModel().getSelectedItem();
+        }
+    }
+    @FXML
+    private void save(ActionEvent event) {
         String[] str = SmartReminder.tmpStartTime.getSelectionModel().getSelectedItem().split("\\.");
         int beginHrs = Integer.parseInt(str[0]);
         int beginMins = Integer.parseInt(str[1]);
@@ -122,27 +147,7 @@ public class ScheduleMakerPageController implements Initializable {
         }
     }
     @FXML
-    private void checkBoxOnClick(ActionEvent event) {
-         checkRepeatValue = checkRepeat.isSelected();
-    }
-    @FXML
-    private void backOnclick(ActionEvent event) {
+    private void back(ActionEvent event) {
         SmartReminder.pageController.next("SchedulePage");
-    }
-    @FXML
-    private void SelectStartTime(MouseEvent event) {
-        if(event.getClickCount() == 1){
-            SmartReminder.selectedStartTime = startTime.getSelectionModel().getSelectedItem();
-        }    
-    }
-    @FXML
-    private void SelectFinishTime(MouseEvent event) {
-        if(event.getClickCount() == 1){
-            SmartReminder.selectedFinishTime = finishTime.getSelectionModel().getSelectedItem();
-        }
-    }
-    @FXML
-    private void preAlarming(ActionEvent event) {
-        SmartReminder.selectedPreAlarm = preAlarmList.getValue(); 
     }
 }

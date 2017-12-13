@@ -32,7 +32,7 @@
                   <Font name="Tw Cen MT" size="21.0" />
                </font>
             </Label>
-            <Label fx:id="sign_up" layoutX="121.0" layoutY="354.0" onMouseClicked="#onSignUp" prefHeight="46.0" prefWidth="85.0" text="Sign Up" textFill="#948b8b" underline="true">
+            <Label fx:id="sign_up" layoutX="121.0" layoutY="354.0" onMouseClicked="#signUp" prefHeight="46.0" prefWidth="85.0" text="Sign Up" textFill="#948b8b" underline="true">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -76,7 +76,7 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5b5b5b" height="2.0" layoutX="96.0" layoutY="353.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="382.0" />
             <TextField fx:id="id_field" layoutX="182.0" layoutY="188.0" prefHeight="52.0" prefWidth="269.0" promptText="Username" />
             <PasswordField fx:id="password_field" layoutX="182.0" layoutY="273.0" prefHeight="52.0" prefWidth="269.0" promptText="Password" style="-fx-background-radius: 5;" />
-            <JFXButton layoutX="218.0" layoutY="436.0" onAction="#btnLogin" prefHeight="24.0" prefWidth="129.0" style="-fx-background-color: #8c8c80;" text="Login" textFill="WHITE">
+            <JFXButton layoutX="218.0" layoutY="436.0" onAction="#login" prefHeight="24.0" prefWidth="129.0" style="-fx-background-color: #8c8c80;" text="Login" textFill="WHITE">
                <font>
                   <Font name="Tw Cen MT" size="23.0" />
                </font>

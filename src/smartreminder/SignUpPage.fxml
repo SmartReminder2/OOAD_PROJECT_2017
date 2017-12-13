@@ -62,7 +62,7 @@
             <Circle fx:id="circle3" fill="#07e51d74" layoutX="67.0" layoutY="340.0" radius="36.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
             <Circle fill="#f8ff21ab" layoutX="157.0" layoutY="320.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5b5b5b" height="2.0" layoutX="77.0" layoutY="286.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="382.0" />
-            <JFXButton layoutX="45.0" layoutY="309.0" onAction="#onBackClick" prefHeight="42.0" prefWidth="94.0" style="-fx-background-color: #8c8c90;" text="Back" textFill="WHITE">
+            <JFXButton layoutX="45.0" layoutY="309.0" onAction="#back" prefHeight="42.0" prefWidth="94.0" style="-fx-background-color: #8c8c90;" text="Back" textFill="WHITE">
                <font>
                   <Font name="Tw Cen MT Bold" size="19.0" />
                </font>
@@ -103,7 +103,7 @@
       <Circle fill="#ff21f038" layoutX="501.0" layoutY="501.0" radius="26.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
       <Circle fill="#59ff21" layoutX="484.0" layoutY="520.0" radius="4.0" stroke="#fffbfb" strokeType="INSIDE" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5b5b5b" height="2.0" layoutX="94.0" layoutY="148.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="382.0" />
-      <JFXButton layoutX="423.0" layoutY="461.0" onAction="#onSignUpClick" prefHeight="42.0" prefWidth="94.0" style="-fx-background-color: #8c8c90;" text="Sign Up" textFill="WHITE">
+      <JFXButton layoutX="423.0" layoutY="461.0" onAction="#signUp" prefHeight="42.0" prefWidth="94.0" style="-fx-background-color: #8c8c90;" text="Sign Up" textFill="WHITE">
          <font>
             <Font name="Tw Cen MT Bold" size="19.0" />
          </font>

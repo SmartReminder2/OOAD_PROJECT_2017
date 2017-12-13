@@ -82,7 +82,12 @@ public class SignUpPageController implements Initializable {
         circle.playCircleAnimation(circle12,1.0,0.1,800);
     }    
     @FXML
-    private void onSignUpClick(ActionEvent event) {
+    private void back(ActionEvent event) {
+        error_pane.setVisible(false);
+        SmartReminder.pageController.next("LoginPage");
+    }
+    @FXML
+    private void signUp(ActionEvent event) {
         String username = username_fill.getText();
         String password = password_fill.getText();
         String tel = tel_fill.getText();
@@ -94,10 +99,5 @@ public class SignUpPageController implements Initializable {
         else {
             error_pane.setVisible(true);
         }
-    }
-    @FXML
-    private void onBackClick(ActionEvent event) {
-        error_pane.setVisible(false);
-        SmartReminder.pageController.next("LoginPage");
     }
 }

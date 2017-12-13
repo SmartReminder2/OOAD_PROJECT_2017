@@ -32,7 +32,7 @@ public class WelcomePageController implements Initializable {
         SmartReminder.tmpLogin_pane = login_pane;
     }    
     @FXML
-    private void click(ActionEvent event) {
+    private void clickWelcome(ActionEvent event) {
         SmartReminder.pageController.next("LoginPage");
     }
 }

@@ -27,7 +27,7 @@ public class LoginFailedPageController implements Initializable {
         // TODO
     }    
     @FXML
-    private void btnBack(ActionEvent event) {
+    private void back(ActionEvent event) {
         SmartReminder.pageController.next("LoginPage");
     }
 }

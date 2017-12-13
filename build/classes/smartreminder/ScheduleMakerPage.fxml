@@ -23,24 +23,24 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="scheduleName" layoutX="340.0" layoutY="143.0" onAction="#Clicking" prefHeight="49.0" prefWidth="545.0" promptText="SCHEDULE NAME">
+      <TextField fx:id="scheduleName" layoutX="340.0" layoutY="143.0" prefHeight="49.0" prefWidth="545.0" promptText="SCHEDULE NAME">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <ComboBox fx:id="preAlarmList" layoutX="457.0" layoutY="527.0" onAction="#preAlarming" prefHeight="25.0" prefWidth="137.0" style="-fx-background-color: #ffffff;" />
-      <CheckBox fx:id="checkRepeat" layoutX="647.0" layoutY="515.0" mnemonicParsing="false" onAction="#checkBoxOnClick" prefHeight="49.0" prefWidth="100.0" text="Repeat" textFill="WHITE">
+      <ComboBox fx:id="preAlarmList" layoutX="457.0" layoutY="527.0" onAction="#selectPreAlarm" prefHeight="25.0" prefWidth="137.0" style="-fx-background-color: #ffffff;" />
+      <CheckBox fx:id="checkRepeat" layoutX="647.0" layoutY="515.0" mnemonicParsing="false" onAction="#setRepeat" prefHeight="49.0" prefWidth="100.0" text="Repeat" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="checkAlarm" layoutX="789.0" layoutY="515.0" mnemonicParsing="false" onAction="#checkBoxOnClick" prefHeight="49.0" prefWidth="100.0" text="Alarm" textFill="WHITE">
+      <CheckBox fx:id="checkAlarm" layoutX="789.0" layoutY="515.0" mnemonicParsing="false" onAction="#setAlarm" prefHeight="49.0" prefWidth="100.0" text="Alarm" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </CheckBox>
-      <ListView fx:id="startTime" layoutX="340.0" layoutY="366.0" onMouseClicked="#SelectStartTime" prefHeight="89.0" prefWidth="200.0" />
-      <ListView fx:id="finishTime" layoutX="686.0" layoutY="366.0" onMouseClicked="#SelectFinishTime" prefHeight="89.0" prefWidth="200.0" />
+      <ListView fx:id="startTime" layoutX="340.0" layoutY="366.0" onMouseClicked="#selectStartTime" prefHeight="89.0" prefWidth="200.0" />
+      <ListView fx:id="finishTime" layoutX="686.0" layoutY="366.0" onMouseClicked="#selectFinishTime" prefHeight="89.0" prefWidth="200.0" />
       <Label layoutX="387.0" layoutY="333.0" prefHeight="27.0" prefWidth="107.0" text="START TIME" textFill="#1beb94">
          <font>
             <Font name="System Bold" size="18.0" />
@@ -56,7 +56,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <JFXButton layoutX="650.0" layoutY="623.0" onAction="#Clicking" prefHeight="39.0" prefWidth="121.0" style="-fx-background-color: #9dbee4;" text="Save">
+      <JFXButton layoutX="650.0" layoutY="623.0" onAction="#save" prefHeight="39.0" prefWidth="121.0" style="-fx-background-color: #9dbee4;" text="Save">
          <font>
             <Font name="Tw Cen MT" size="20.0" />
          </font>
@@ -64,7 +64,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="452.0" layoutY="623.0" onAction="#backOnclick" prefHeight="39.0" prefWidth="121.0" style="-fx-background-color: #9dbee4;" text="Back">
+      <JFXButton layoutX="452.0" layoutY="623.0" onAction="#back" prefHeight="39.0" prefWidth="121.0" style="-fx-background-color: #9dbee4;" text="Back">
          <font>
             <Font name="Tw Cen MT" size="20.0" />
          </font>

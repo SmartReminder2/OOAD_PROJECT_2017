@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -94,7 +95,11 @@ public class LoginPageController implements Initializable {
         circle.playCircleAnimation(circle16,1.0,0.1,1500);
     }
     @FXML
-    private void btnLogin(ActionEvent event) {
+    private void signUp(MouseEvent event) {
+        SmartReminder.pageController.next("SignUpPage");
+    }
+    @FXML
+    private void login(ActionEvent event) {
         List<UserAccount> users = SmartReminder.myUserAccountServices.getUserAccounts();
         for (int i = 0; i < users.size(); i++) {
             if(users.get(i).getUserName().equalsIgnoreCase(id_field.getText()) && users.get(i).getPassword().equalsIgnoreCase(password_field.getText())) {
@@ -105,9 +110,4 @@ public class LoginPageController implements Initializable {
         }
         SmartReminder.pageController.next("LoginFailedPage");
     }
-    @FXML
-    private void onSignUp(MouseEvent event) {
-        SmartReminder.pageController.next("SignUpPage");
-    }
-    
 }

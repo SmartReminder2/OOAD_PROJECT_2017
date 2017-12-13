@@ -24,7 +24,7 @@
           <AnchorPane fx:id="timeTable_pane" minHeight="0.0" minWidth="0.0" prefHeight="3000.0" prefWidth="1000.0" />
         </content>
       </ScrollPane>
-      <JFXButton layoutX="51.0" layoutY="19.0" onAction="#backBtn" prefHeight="39.0" prefWidth="121.0" style="-fx-background-color: #9dbee4;" text="Back">
+      <JFXButton layoutX="51.0" layoutY="19.0" onAction="#back" prefHeight="39.0" prefWidth="121.0" style="-fx-background-color: #9dbee4;" text="Back">
          <font>
             <Font name="Tw Cen MT" size="20.0" />
          </font>
@@ -32,7 +32,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="1039.0" layoutY="19.0" onAction="#adding" prefHeight="39.0" prefWidth="121.0" style="-fx-background-color: #9dbee4;" text="Add">
+      <JFXButton layoutX="1039.0" layoutY="19.0" onAction="#add" prefHeight="39.0" prefWidth="121.0" style="-fx-background-color: #9dbee4;" text="Add">
          <font>
             <Font name="Tw Cen MT" size="20.0" />
          </font>
