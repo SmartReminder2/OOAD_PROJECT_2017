@@ -9,10 +9,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="smartreminder.AddingScheduleController">
+<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="smartreminder.ScheduleMakerPageController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#606161" height="82.0" stroke="#f5f5f5" strokeType="INSIDE" strokeWidth="0.0" width="1209.0" />
-      <Text fx:id="labelHead" fill="WHITE" layoutX="509.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADD SCHEDULE">
+      <Text fx:id="headLabel" fill="WHITE" layoutX="509.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADD SCHEDULE">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>

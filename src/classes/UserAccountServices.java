@@ -8,7 +8,6 @@ package classes;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-import smartreminder.*;
 
 /**
  *
@@ -36,19 +35,16 @@ public class UserAccountServices {
     }
     public boolean createUserAccounts(UserAccount userAccount, String confirmPassword){
         if(!userAccount.getUserName().equals("") && !userAccount.getPassword().equals("") && !userAccount.getPhoneNumber().equals("") && confirmPassword.equals(userAccount.getPassword())) {
-            
             ObjectDBServices odb = new ObjectDBServices();
             EntityManager em = odb.openConnection();
             em.getTransaction().begin();
             em.persist(userAccount);
             em.getTransaction().commit();
             odb.closeConnection();
-            
             userAccounts.add(userAccount);
             return true;
         }
         else {
-            
             return false;
         }
     }

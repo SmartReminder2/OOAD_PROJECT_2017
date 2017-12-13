@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="smartreminder.ErrorLoginController">
+<AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="smartreminder.LoginFailedPageController">
    <children>
       <Pane layoutY="7.0" prefHeight="560.0" prefWidth="560.0">
          <children>

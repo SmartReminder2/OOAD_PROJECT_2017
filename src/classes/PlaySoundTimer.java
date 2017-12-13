@@ -16,40 +16,40 @@ import smartreminder.*;
  * @author kan
  */
 public class PlaySoundTimer {
-    Boolean isAlarm;
-    Timer t;
-
+    
+    //attributes
+    private Boolean isAlarm;
+    private Timer t;
+    
+    //constructors
     public PlaySoundTimer() {
         t = new Timer(1000, new ActionListener() {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent ae) {
-            List<Schedule> schedules = SmartReminder.myCalendar.getSchedule(new Date(), SmartReminder.myAccount);
+            List<PersonalSchedule> schedules = SmartReminder.myScheduleServices.getSchedule(new Date(), SmartReminder.myAccount);
             for (int i = 0; i < schedules.size(); i++) {
                 if (schedules.get(i).getBeginTime().getHours() == new Date().getHours()
                 && schedules.get(i).getBeginTime().getMinutes() == new Date().getMinutes()
                 && schedules.get(i).getIsAlert()) 
                 {
-                    System.out.println(schedules.get(i).getTitle());
                     if (!isAlarm) {
-                        //playSound("alarm.wav");
                         SmartReminder.alarmSound.playSound();
                         isAlarm = true;
                     }
                 }
                 else {
                     if (isAlarm) {
-                        //stopSound();
                         SmartReminder.alarmSound.stopSound();
                         isAlarm = false;
                     }
                 }
             }
-            System.out.println(new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds());
         }
        });
        isAlarm = false;
     }
     
+    //methods
     public void start() {
         t.start();
     }

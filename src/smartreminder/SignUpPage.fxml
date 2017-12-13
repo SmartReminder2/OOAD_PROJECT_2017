@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="smartreminder.SignUpController">
+<AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="smartreminder.SignUpPageController">
    <children>
       <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#ff000000" height="509.0" layoutX="30.0" layoutY="26.0" opacity="0.9" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="506.0" />
       <Rectangle arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="535.0" layoutX="15.0" layoutY="13.0" opacity="0.9" stroke="#fcf9f9" strokeType="INSIDE" strokeWidth="0.0" width="536.0" />

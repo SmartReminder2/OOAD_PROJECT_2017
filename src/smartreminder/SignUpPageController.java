@@ -15,14 +15,13 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
-import javax.persistence.*;
 
 /**
  * FXML Controller class
  *
  * @author User
  */
-public class SignUpController implements Initializable {
+public class SignUpPageController implements Initializable {
 
     //attributes
     @FXML
@@ -60,17 +59,12 @@ public class SignUpController implements Initializable {
     @FXML
     private Circle circle9;
     
-    //public static String username;
-    //public static String password;
-    //public static String tel;
-    
     /**
      * Initializes the controller class.
      */
     //methods
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         Animation circle = new Animation();
         circle.playCircleAnimation(circle1,1.0,0.1,1800);
         circle.playCircleAnimation(circle2,1.0,0.1,1800);
@@ -92,29 +86,18 @@ public class SignUpController implements Initializable {
         String username = username_fill.getText();
         String password = password_fill.getText();
         String tel = tel_fill.getText();
-            
         UserAccount user = new UserAccount(username, password, tel);
-            
         if(SmartReminder.myUserAccountServices.createUserAccounts(user, password_confirm.getText())) {
             error_pane.setVisible(false);
-            SmartReminder.primaryPane.getChildren().clear();
-            SmartReminder.primaryPane.getChildren().add(SmartReminder.fillIdPassword);
-            
-            System.out.println(username);
-            System.out.println(password);
-            System.out.println(tel);
+            SmartReminder.pageController.next("LoginPage");
         }
         else {
             error_pane.setVisible(true);
-            SmartReminder.primaryPane.getChildren().clear();
-            SmartReminder.primaryPane.getChildren().add(SmartReminder.signUpPage);
-            
         }
     }
     @FXML
     private void onBackClick(ActionEvent event) {
         error_pane.setVisible(false);
-        SmartReminder.primaryPane.getChildren().clear();
-        SmartReminder.primaryPane.getChildren().add(SmartReminder.fillIdPassword);
+        SmartReminder.pageController.next("LoginPage");
     }
 }

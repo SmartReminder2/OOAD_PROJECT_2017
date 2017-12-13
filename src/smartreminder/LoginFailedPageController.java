@@ -16,7 +16,7 @@ import javafx.fxml.Initializable;
  *
  * @author 58010622
  */
-public class ErrorLoginController implements Initializable {
+public class LoginFailedPageController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -28,7 +28,6 @@ public class ErrorLoginController implements Initializable {
     }    
     @FXML
     private void btnBack(ActionEvent event) {
-        SmartReminder.primaryPane.getChildren().clear();
-        SmartReminder.primaryPane.getChildren().add(SmartReminder.fillIdPassword); 
+        SmartReminder.pageController.next("LoginPage");
     }
 }

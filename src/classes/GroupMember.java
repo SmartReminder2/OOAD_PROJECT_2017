@@ -41,5 +41,4 @@ public class GroupMember implements Serializable {
     public GroupDetail getGroupDetail() {
         return groupDetail;
     }
-    
 }

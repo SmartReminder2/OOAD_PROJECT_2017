@@ -9,29 +9,21 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 
 /**
  * FXML Controller class
  *
- * @author 58010622
+ * @author User
  */
-public class ProfilePageController implements Initializable {
-    
-    //attributes
-    @FXML
-    private Circle imageProfile;
-    @FXML
-    private Label username_label;
-    
+public class TimeTablePageController implements Initializable {
+
     /**
      * Initializes the controller class.
      */
     //methods
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        SmartReminder.tmpUsername_label = username_label;
-        SmartReminder.tmpImageProfile = imageProfile;
-    }   
+        // TODO
+    }    
 }

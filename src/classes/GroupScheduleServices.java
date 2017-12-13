@@ -15,35 +15,26 @@ import smartreminder.*;
  *
  * @author kan
  */
-public class GroupCalendar implements Calendar {
+public class GroupScheduleServices {
     
     //attributes
-    private static GroupCalendar instance = new GroupCalendar();
+    private static GroupScheduleServices instance = new GroupScheduleServices();
     private List<GroupSchedule> schedules;
     private boolean isAdding = true;
     private long tmpSchId;
     
     //constructors
-    private GroupCalendar(){
+    private GroupScheduleServices(){
         ObjectDBServices odb = new ObjectDBServices();
         EntityManager em = odb.openConnection();
-        //EntityManagerFactory emf = Persistence.createEntityManagerFactory("./db/database.odb");
-        //EntityManager em = emf.createEntityManager();
- 
-        // Store 1000 Point objects in the database:
         em.getTransaction().begin();
-        
         TypedQuery<GroupSchedule> query = em.createQuery("SELECT sch FROM GroupSchedule sch", GroupSchedule.class);
         schedules = query.getResultList();
-        
         odb.closeConnection();
-        //SmartReminder.emf.close();
-        
-        System.out.println("Construction Success!!");
     }
     
     //methods
-    public static GroupCalendar getInstance(){
+    public static GroupScheduleServices getInstance(){
         return instance;
     }
     public void addSchedule(GroupSchedule schedule) {
@@ -53,55 +44,36 @@ public class GroupCalendar implements Calendar {
             if(isAvailable(schedule)) {
                 ObjectDBServices odb = new ObjectDBServices();
                 EntityManager em = odb.openConnection();
-                //EntityManagerFactory emf = Persistence.createEntityManagerFactory("./db/database.odb");
-                //EntityManager em = emf.createEntityManager();
                 em.getTransaction().begin();
                 em.persist(schedule);
                 em.getTransaction().commit();
-                // Close the database connection:
                 odb.closeConnection();
-                //SmartReminder.emf.close();
                 schedules.add(schedule);
-            }
-            else {
-                System.out.println(schedule.getTitle() + " schedule is Overlap.");
-                
-            }
-                
+            }   
         }
         else {
             System.out.println(schedule.getTitle() + " is the first schedule.");
             ObjectDBServices odb = new ObjectDBServices();
             EntityManager em = odb.openConnection();
-            //EntityManagerFactory emf = Persistence.createEntityManagerFactory("./db/database.odb");
-            //EntityManager em = emf.createEntityManager();
             em.getTransaction().begin();
             em.persist(schedule);
             em.getTransaction().commit();
-            // Close the database connection:
             odb.closeConnection();
-            //SmartReminder.emf.close();
             schedules.add(schedule);
-            System.out.println("Adding success!!!");
         }
     }
     public void editSchedule() {
         isAdding = false;
         ObjectDBServices odb = new ObjectDBServices();
         EntityManager em = odb.openConnection();
-        //EntityManagerFactory emf = Persistence.createEntityManagerFactory("./db/database.odb");
-        //EntityManager em = emf.createEntityManager();
-        GroupSchedule sch = em.find(GroupSchedule.class, AddingScheduleController.tmpId);
+        GroupSchedule sch = em.find(GroupSchedule.class, SmartReminder.tmpId);
         em.getTransaction().begin();
-        
-        String[] tmpStr = AddingScheduleController.tmpStartTime.getSelectionModel().getSelectedItem().split("\\.");
+        String[] tmpStr = SmartReminder.tmpStartTime.getSelectionModel().getSelectedItem().split("\\.");
         int tmpBeginHrs = Integer.parseInt(tmpStr[0]);
         int tmpBeginMins = Integer.parseInt(tmpStr[1]);
-                
-        tmpStr = AddingScheduleController.tmpFinishTime.getSelectionModel().getSelectedItem().split("\\.");
+        tmpStr = SmartReminder.tmpFinishTime.getSelectionModel().getSelectedItem().split("\\.");
         int tmpFinishHrs = Integer.parseInt(tmpStr[0]);
         int tmpFinishMins = Integer.parseInt(tmpStr[1]);
-        
         Date tmpBegin = sch.getBeginTime();
         tmpBegin.setHours(tmpBeginHrs);
         tmpBegin.setMinutes(tmpBeginMins);
@@ -109,54 +81,43 @@ public class GroupCalendar implements Calendar {
         tmpFinish.setHours(tmpFinishHrs);
         tmpFinish.setMinutes(tmpFinishMins);
         tmpSchId = sch.getId();
-        //System.out.println("IDDDDDDDDDDD: " + sch.getId());
-        
-        GroupSchedule tmpSch = new GroupSchedule(sch.getGroupId(), AddingScheduleController.tmpScheduleName.getText(), AddingScheduleController.tmpDetail.getText(), tmpBegin, tmpFinish, Integer.parseInt(AddingScheduleController.select_pre), AddingScheduleController.tmpCheckRepeat.isSelected(), AddingScheduleController.tmpCheckAlarm.isSelected());
-        
+        GroupSchedule tmpSch = new GroupSchedule(sch.getGroupId(), SmartReminder.tmpScheduleName.getText(), SmartReminder.tmpDetail.getText(), tmpBegin, tmpFinish, Integer.parseInt(SmartReminder.selectedPreAlarm), SmartReminder.tmpCheckRepeat.isSelected(), SmartReminder.tmpCheckAlarm.isSelected());
         if(!schedules.isEmpty()) {
             if(isAvailable(tmpSch)) {
-                String[] str = AddingScheduleController.tmpStartTime.getSelectionModel().getSelectedItem().split("\\.");
+                String[] str = SmartReminder.tmpStartTime.getSelectionModel().getSelectedItem().split("\\.");
                 int beginHrs = Integer.parseInt(str[0]);
                 int beginMins = Integer.parseInt(str[1]);
-
-                str = AddingScheduleController.tmpFinishTime.getSelectionModel().getSelectedItem().split("\\.");
+                str = SmartReminder.tmpFinishTime.getSelectionModel().getSelectedItem().split("\\.");
                 int finishHrs = Integer.parseInt(str[0]);
                 int finishMins = Integer.parseInt(str[1]);
-
-                sch.setTitle(AddingScheduleController.tmpScheduleName.getText());
-                sch.setDetail(AddingScheduleController.tmpDetail.getText());
-
+                sch.setTitle(SmartReminder.tmpScheduleName.getText());
+                sch.setDetail(SmartReminder.tmpDetail.getText());
                 sch.getBeginTime().setHours(beginHrs);
                 sch.getBeginTime().setMinutes(beginMins);
-
                 sch.getFinishTime().setHours(finishHrs);
                 sch.getFinishTime().setMinutes(finishMins);
-
-                sch.setTimeBeforeAlert(Integer.parseInt(AddingScheduleController.tmpPreAlarmList.getSelectionModel().getSelectedItem()));
-                sch.setIsRepeat(AddingScheduleController.tmpCheckRepeat.isSelected());
-                sch.setIsAlert(AddingScheduleController.tmpCheckAlarm.isSelected());
-
-                long tmpSchId = sch.getId();
-                List<GroupSchedule> list = getSchedule(sch.getBeginTime(), GroupPageController.tmpGroupDetail);
+                sch.setTimeBeforeAlert(Integer.parseInt(SmartReminder.tmpPreAlarmList.getSelectionModel().getSelectedItem()));
+                sch.setIsRepeat(SmartReminder.tmpCheckRepeat.isSelected());
+                sch.setIsAlert(SmartReminder.tmpCheckAlarm.isSelected());
+                long temporarySchId = sch.getId();
+                List<GroupSchedule> list = getSchedule(sch.getBeginTime(), SmartReminder.tmpGroupDetail);
                 for (int i = 0; i < list.size(); i++) {
-                    if(list.get(i).getId() == tmpSchId) {
-                        list.get(i).setTitle(AddingScheduleController.tmpScheduleName.getText());
-                        list.get(i).setDetail(AddingScheduleController.tmpDetail.getText());
+                    if(list.get(i).getId() == temporarySchId) {
+                        list.get(i).setTitle(SmartReminder.tmpScheduleName.getText());
+                        list.get(i).setDetail(SmartReminder.tmpDetail.getText());
                         list.get(i).getBeginTime().setHours(beginHrs);
                         list.get(i).getBeginTime().setMinutes(beginMins);
                         list.get(i).getFinishTime().setHours(finishHrs);
                         list.get(i).getFinishTime().setMinutes(finishMins);
-                        list.get(i).setTimeBeforeAlert(Integer.parseInt(AddingScheduleController.tmpPreAlarmList.getSelectionModel().getSelectedItem()));
-                        list.get(i).setIsRepeat(AddingScheduleController.tmpCheckRepeat.isSelected());
-                        list.get(i).setIsAlert(AddingScheduleController.tmpCheckAlarm.isSelected());
+                        list.get(i).setTimeBeforeAlert(Integer.parseInt(SmartReminder.tmpPreAlarmList.getSelectionModel().getSelectedItem()));
+                        list.get(i).setIsRepeat(SmartReminder.tmpCheckRepeat.isSelected());
+                        list.get(i).setIsAlert(SmartReminder.tmpCheckAlarm.isSelected());
                     }
                 }
-
                 em.getTransaction().commit();
                 odb.closeConnection();
             }
             else {
-                System.out.println(sch.getTitle() + " schedule is Overlap. (updating)");
                 odb.closeConnection();
             }
         }
@@ -165,88 +126,43 @@ public class GroupCalendar implements Calendar {
         int date = schDate.getDate();
         int month = schDate.getMonth();
         int year = schDate.getYear();
-        
-        
-        
         ArrayList<GroupSchedule> list = new ArrayList<>();
-        System.out.println("SIZE: " + schedules.size());
         for (int i = 0; i < schedules.size(); i++) {
-            //System.out.println(schedules.get(i).getBeginTime().getDate() + " " + date);
             if (schedules.get(i).getBeginTime().getDate()== date && schedules.get(i).getBeginTime().getMonth() == month && schedules.get(i).getBeginTime().getYear() == year) {
                 if (schedules.get(i).getGroupId() == group.getId()) {
-                    System.out.println("HIT!!!!");
                     list.add(schedules.get(i));
                 }
             }
         }
-        System.out.println(list.toString());
-         
         return (List)list;
     }
-    public void showSchedule() {
-        for (int i = 0; i < schedules.size(); i++) {
-            System.out.println(schedules.get(i).getTitle());
-            System.out.println(schedules.get(i).getDetail());
-        }
-    }
     private boolean isAvailable(GroupSchedule schedule) {
-        
         boolean returnVal = true;
         int[] newSchedulePhase = new int[48];
         for (int i = getPhase(schedule.getBeginTime()); i < getPhase(schedule.getFinishTime()); i++) {
             newSchedulePhase[i] = 1;
-        }
-        System.out.println("New Sch");
-        for (int i = 0; i < newSchedulePhase.length; i++) {
-            System.out.print(newSchedulePhase[i]);
-        }
-        System.out.println("id: " + tmpSchId);
-        System.out.println("BeginPhase: " + getPhase(schedule.getBeginTime()));
-        System.out.println("FinPhase: " + getPhase(schedule.getFinishTime()));
-        System.out.println("");
-        
+        }        
         for (int i = 0; i < schedules.size(); i++) {
-            if (schedules.get(i).getGroupId() == GroupPageController.tmpGroupDetail.getId()) {
+            if (schedules.get(i).getGroupId() == SmartReminder.tmpGroupDetail.getId()) {
                 int date = schedule.getBeginTime().getDate();
                 int month = schedule.getBeginTime().getMonth();
                 int year = schedule.getBeginTime().getYear();
                 if (schedules.get(i).getBeginTime().getDate() == date && schedules.get(i).getBeginTime().getMonth() == month && schedules.get(i).getBeginTime().getYear() == year) {
                     if (!isAdding && schedules.get(i).getId() == tmpSchId) {
-                        System.out.println("skip this overlab for editting");
+                        
                     }
                     else if ( isAdding || (!isAdding && schedules.get(i).getId() != tmpSchId) ) {
                         int[] schedulePhase = new int[48];
                         for (int j = 0; j < schedulePhase.length; j++) {
-                            if(j==0)
-                            {
-                                //System.out.println("Begin"+getPhase(schedules.get(i).getBeginTime()));
-                                //System.out.println("Fin"+getPhase(schedules.get(i).getFinishTime()));
-                                //System.out.println("J=0 title: " + schedules.get(i).getTitle());
+                            if(j==0){
+
                             }
                             if (j >= getPhase(schedules.get(i).getBeginTime()) && j < getPhase(schedules.get(i).getFinishTime())) {
                                 schedulePhase[j] = 1;
-                                //System.out.println("title: " + schedules.get(i).getTitle());
-                                //System.out.println("kan eiei: " + j + " I:"+i);
-
                             }
                         }
-                        System.out.println("Old Sch " + i);
-                        for (int j = 0; j < schedulePhase.length; j++) {
-                            System.out.print(schedulePhase[j]);
-                        }
-                        System.out.println("id: " + schedules.get(i).getId());
-                        System.out.println("BeginPhase: " + getPhase(schedules.get(i).getBeginTime()));
-                        System.out.println("FinPhase: " + getPhase(schedules.get(i).getFinishTime()));
-                        /*System.out.println("");
-                        System.out.println("");
-                        for (int j = 0; j < newSchedulePhase.length; j++) {
-                            System.out.print(newSchedulePhase[j]);
-                        }
-                        System.out.println("");*/
-
                         for (int j = 0; j < schedulePhase.length; j++) {
                             if(newSchedulePhase[j] == 1 & schedulePhase[j] == 1) {
-                                System.out.println(j+" : Beam eieieie : Old "+schedulePhase[j] +" New : "+newSchedulePhase[j]+" I:"+i);
                                 returnVal = false;
                                 break;
                             }
@@ -255,20 +171,15 @@ public class GroupCalendar implements Calendar {
                             break;
                         }
                     }
-                    
                 }
-                
             }
         }
-        
         return returnVal;
     }
     public static int getPhase(Date date) {
-        
         int phase;
         int hrs = date.getHours();
         int mins = date.getMinutes();
-            
         if((hrs == 0) & (mins == 0)) {
             phase = 0;
         }
@@ -416,38 +327,23 @@ public class GroupCalendar implements Calendar {
         else {
             phase = 0;
         }
-        
         return phase;
     }
     public ArrayList getMemberSchedules(String groupName, String createrUserName) {
-
         ArrayList<GroupMember> members = SmartReminder.myGroupServices.getMembers(groupName, createrUserName);
-        
         //get all personal schedules from members
-        ArrayList<Schedule> schedules = new ArrayList<>();
+        ArrayList<PersonalSchedule> schedules = new ArrayList<>();
         for (int i = 0; i < members.size(); i++) {
-            schedules.addAll(SmartReminder.myCalendar.getSchedule(SmartReminder.beginTime, members.get(i).getUserAccount()));
+            schedules.addAll(SmartReminder.myScheduleServices.getSchedule(SmartReminder.beginTime, members.get(i).getUserAccount()));
         }
-        System.out.println("-----------Group Schedules-------------");
-        for (int i = 0; i < schedules.size(); i++) {
-            System.out.println(schedules.get(i).getTitle() + ": " + schedules.get(i).getUserId());
-        }
-        System.out.println("--------------------------------------");
-        
         return schedules;
     }
     public void update(){
         ObjectDBServices odb = new ObjectDBServices();
         EntityManager em = odb.openConnection();
-        //EntityManagerFactory emf = Persistence.createEntityManagerFactory("./db/database.odb");
-        //EntityManager em = emf.createEntityManager();
- 
-        // Store 1000 Point objects in the database:
         em.getTransaction().begin();
-        
         TypedQuery<GroupSchedule> query = em.createQuery("SELECT sch FROM GroupSchedule sch", GroupSchedule.class);
         schedules = query.getResultList();
-        
         odb.closeConnection();
     }
 }

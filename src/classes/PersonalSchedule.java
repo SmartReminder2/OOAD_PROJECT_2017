@@ -14,7 +14,7 @@ import javax.persistence.*;
  * @author kan
  */
 @Entity
-public class Schedule implements Serializable {
+public class PersonalSchedule implements Serializable {
     
     //attributes
     private static final long serialVersionUID = 1L;
@@ -32,8 +32,8 @@ public class Schedule implements Serializable {
     private Boolean isAlert;
     
     //constructors
-    public Schedule() {}
-    public Schedule(long userId, String title, String message, Date start, Date finish, int timeBeforeAlert, Boolean isRepeat, Boolean isAlert) {
+    public PersonalSchedule() {}
+    public PersonalSchedule(long userId, String title, String message, Date start, Date finish, int timeBeforeAlert, Boolean isRepeat, Boolean isAlert) {
         this.userId = userId;
         this.title = title;
         this.detail = message;

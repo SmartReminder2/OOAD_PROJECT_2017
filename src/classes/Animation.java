@@ -16,6 +16,7 @@ import javafx.util.Duration;
  */
 public class Animation {
     
+    //methods
     public void playCircleAnimation(Circle c, double startFadeVal, double stopFadeVal, int duration){
         FadeTransition ft = new FadeTransition(Duration.millis(duration), c);
         ft.setFromValue(startFadeVal);

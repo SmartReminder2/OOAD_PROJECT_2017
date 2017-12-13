@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="1414.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="smartreminder.TimeTableController">
+<AnchorPane id="AnchorPane" prefHeight="1414.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="smartreminder.TimeTablePageController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fff9d06e" height="3002.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1000.0" />
       <GridPane layoutY="2.0" prefHeight="3000.0" prefWidth="1000.0">

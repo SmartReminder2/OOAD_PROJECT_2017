@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="SmartReminder.jar" size="1654757" download="eager" />
+    <jar href="SmartReminder.jar" size="1652288" download="eager" />
     <jar href="lib\jfoenix.jar" size="2414497" download="eager" />
     <jar href="lib\objectdb.jar" size="1497000" download="eager" />
   </resources>

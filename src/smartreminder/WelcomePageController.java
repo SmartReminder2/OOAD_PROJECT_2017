@@ -7,31 +7,32 @@ package smartreminder;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.shape.Circle;
+import javafx.scene.layout.Pane;
 
 /**
  * FXML Controller class
  *
  * @author 58010622
  */
-public class ProfilePageController implements Initializable {
-    
-    //attributes
-    @FXML
-    private Circle imageProfile;
-    @FXML
-    private Label username_label;
-    
+public class WelcomePageController implements Initializable {
+
     /**
      * Initializes the controller class.
-     */
+     */ 
+    //attributes
+    @FXML
+    private Pane login_pane;
+    
     //methods
-    @Override
+    @Override   
     public void initialize(URL url, ResourceBundle rb) {
-        SmartReminder.tmpUsername_label = username_label;
-        SmartReminder.tmpImageProfile = imageProfile;
-    }   
+        SmartReminder.tmpLogin_pane = login_pane;
+    }    
+    @FXML
+    private void click(ActionEvent event) {
+        SmartReminder.pageController.next("LoginPage");
+    }
 }
